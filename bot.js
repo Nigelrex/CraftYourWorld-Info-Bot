@@ -1,5 +1,6 @@
 const Discord = require("discord.js")
-const { prefix, channelIDs, color } = require("./config.json")
+const { prefix} = require("./config.json")
+const dotenv = require("dotenv").config()
 const keepAlive = require('./server')
 const client = new Discord.Client({
 	partials: ["MESSAGE", "CHANNEL"],
@@ -21,100 +22,221 @@ client.on("message", (message) => {
 	const args = message.content.slice(prefix.length).split(/ +/)
 	const commandName = args.shift().toLowerCase()
 
-	const command =
-		client.commands.get(commandName) ||
-		client.commands.find(
-			(cmd) => cmd.aliases && cmd.aliases.includes(commandName)
-		)
 
-	if (!command) return
-
-	try {
-		command.execute(message, args)
-	} catch (error) {
-		console.error(error)
-		message.reply("there was an error trying to execute that command!")
-	}
 })
 
 
 
 
 client.on("message", (message) => {
-	if (message.content === `info 1`) {
+	if (message.content === `rule1`) {
 		message.delete()
 		const embed = new Discord.MessageEmbed()
 			.setColor("#0099ff")
-			.setTitle("**CraftYourWorld Terms and Usage**")
+			.setTitle("**CraftYourWorld Rules**")
 			.setAuthor("CraftYourWorld", "https://imgur.com/i8UVoJq.png")
 			.setDescription(
-				"It is perfectly fine for anyone to use, modify and share our packs within their projects for the betterment of the community.\nHowever, you may only do so if it does not infringe on the following terms and conditions:"
+				"Get Your Self To Know the Rules Of This Server Before You Can Do Anything!\nAnd Make Sure To get Yourself Some Roles To Know More About People And This Server"
 			)
 			.setThumbnail("https://imgur.com/i8UVoJq.png")
 			.addFields(
 				{
-					name: "**Section 1 - TermsAndUsage**",
-					value: "\n────────────\n\n\n",
+					name: "**Rule 1**",
+					value: "\n**Common Sense :** Try Now To Post Your Personal Info Anywhere On This Server! \nThis Might Lead You To Hackers Taking Over Your Personal Information And Threaten You!",
 					inline: false,
 				},
+			)
+			.setTimestamp()
+			.setFooter(`@CraftYourWorld`)
+		message.channel.send({ embed })
+	}
+})
+
+client.on("message", (message) => {
+	if (message.content === `rule2`) {
+		message.delete()
+		const embed = new Discord.MessageEmbed()
+			.setColor("#0099ff")
+			.setTitle("**CraftYourWorld Rules**")
+			.setAuthor("CraftYourWorld", "https://imgur.com/i8UVoJq.png")
+			.setDescription(
+				"Get Your Self To Know the Rules Of This Server Before You Can Do Anything!\nAnd Make Sure To get Yourself Some Roles To Know More About People And This Server"
+			)
+			.setThumbnail("https://imgur.com/i8UVoJq.png")
+			.addFields(
 				{
-					name: "\n\n**1.1**",
-					value:
-						"\n**You cannot redistribute our packs as they are, without proper modification and/or additions.**",
+					name: "**Rule 2**",
+					value: "\n**Language :** Please stick to English so we can understand you.",
 					inline: false,
 				},
+			)
+			.setTimestamp()
+			.setFooter(`@CraftYourWorld`)
+		message.channel.send({ embed })
+	}
+})
+
+client.on("message", (message) => {
+	if (message.content === `rule3`) {
+		message.delete()
+		const embed = new Discord.MessageEmbed()
+			.setColor("#0099ff")
+			.setTitle("**CraftYourWorld Rules**")
+			.setAuthor("CraftYourWorld", "https://imgur.com/i8UVoJq.png")
+			.setDescription(
+				"Get Your Self To Know the Rules Of This Server Before You Can Do Anything!\nAnd Make Sure To get Yourself Some Roles To Know More About People And This Server"
+			)
+			.setThumbnail("https://imgur.com/i8UVoJq.png")
+			.addFields(
 				{
-					name: "\n**1.2**",
-					value:
-						"\n** You cannot restrict access or sell any pack that includes our packs through donations and/or a paywall.** ",
+					name: "**Rule 3**",
+					value: "\n**Staff :** Do Not DM Or Friend Request The Staff Members At Any Cost, Unless And Untill We Tell You.\nWhat The Moderators Say The Rules Mean, The Rules Mean.",
 					inline: false,
 				},
+			)
+			.setTimestamp()
+			.setFooter(`@CraftYourWorld`)
+		message.channel.send({ embed })
+	}
+})
+
+client.on("message", (message) => {
+	if (message.content === `rule4`) {
+		message.delete()
+		const embed = new Discord.MessageEmbed()
+			.setColor("#0099ff")
+			.setTitle("**CraftYourWorld Rules**")
+			.setAuthor("CraftYourWorld", "https://imgur.com/i8UVoJq.png")
+			.setDescription(
+				"Get Your Self To Know the Rules Of This Server Before You Can Do Anything!\nAnd Make Sure To get Yourself Some Roles To Know More About People And This Server"
+			)
+			.setThumbnail("https://imgur.com/i8UVoJq.png")
+			.addFields(
 				{
-					name: "\n**1.3**",
-					value:
-						"\n**You cannot distribute our packs without appropriate credit (refer to Section 2).**",
+					name: "**Rule 4**",
+					value: "\n**Chat :** No spamming. This Includes Starting Or Continuing Emoji Trains, Message Trains, etc.\nNo Loopholes. These rules Are Not Comprehensive And Are Subject To Common Sense.",
 					inline: false,
 				},
+			)
+			.setTimestamp()
+			.setFooter(`@CraftYourWorld`)
+		message.channel.send({ embed })
+	}
+})
+
+client.on("message", (message) => {
+	if (message.content === `rule5`) {
+		message.delete()
+		const embed = new Discord.MessageEmbed()
+			.setColor("#0099ff")
+			.setTitle("**CraftYourWorld Rules**")
+			.setAuthor("CraftYourWorld", "https://imgur.com/i8UVoJq.png")
+			.setDescription(
+				"Get Your Self To Know the Rules Of This Server Before You Can Do Anything!\nAnd Make Sure To get Yourself Some Roles To Know More About People And This Server"
+			)
+			.setThumbnail("https://imgur.com/i8UVoJq.png")
+			.addFields(
 				{
-					name: "\n**1.4**",
-					value:
-						"\n**You can distribute your pack, as long as your pack includes proper modification and/or additions.**",
+					name: "**Rule 5**",
+					value: "\n**Social :** Be respectful. This includes no swearing.",
 					inline: false,
 				},
+			)
+			.setTimestamp()
+			.setFooter(`@CraftYourWorld`)
+		message.channel.send({ embed })
+	}
+})
+
+client.on("message", (message) => {
+	if (message.content === `rule6`) {
+		message.delete()
+		const embed = new Discord.MessageEmbed()
+			.setColor("#0099ff")
+			.setTitle("**CraftYourWorld Rules**")
+			.setAuthor("CraftYourWorld", "https://imgur.com/i8UVoJq.png")
+			.setDescription(
+				"Get Your Self To Know the Rules Of This Server Before You Can Do Anything!\nAnd Make Sure To get Yourself Some Roles To Know More About People And This Server"
+			)
+			.setThumbnail("https://imgur.com/i8UVoJq.png")
+			.addFields(
 				{
-					name: "\n**1.5**",
-					value:
-						"\n**You can distribute your pack with our packs, as long as you have appropriately credited CraftYourWorld (refer to Section 2).** ",
+					name: "**Rule 6**",
+					value: "\n**Channels :** Keep Chat In The Correct Channels, To Avoid Any Misunderstanding Or Frustration/Anger Of Other people On You.",
 					inline: false,
 				},
+			)
+			.setTimestamp()
+			.setFooter(`@CraftYourWorld`)
+		message.channel.send({ embed })
+	}
+})
+
+client.on("message", (message) => {
+	if (message.content === `rule7`) {
+		message.delete()
+		const embed = new Discord.MessageEmbed()
+			.setColor("#0099ff")
+			.setTitle("**CraftYourWorld Rules**")
+			.setAuthor("CraftYourWorld", "https://imgur.com/i8UVoJq.png")
+			.setDescription(
+				"Get Your Self To Know the Rules Of This Server Before You Can Do Anything!\nAnd Make Sure To get Yourself Some Roles To Know More About People And This Server"
+			)
+			.setThumbnail("https://imgur.com/i8UVoJq.png")
+			.addFields(
 				{
-					name: "\n**1.6**",
-					value:
-						"\n**You can distribute your pack, as long as it is free to use for the community.**\n\n\n",
+					name: "**Rule 7**",
+					value: "\n**NSFW :** NSFW Is Not Allowed. This Includes Messages, Images,Avatars, Usernames, And Custom Status Texts.",
 					inline: false,
 				},
+			)
+			.setTimestamp()
+			.setFooter(`@CraftYourWorld`)
+		message.channel.send({ embed })
+	}
+})
+
+client.on("message", (message) => {
+	if (message.content === `rule8`) {
+		message.delete()
+		const embed = new Discord.MessageEmbed()
+			.setColor("#0099ff")
+			.setTitle("**CraftYourWorld Rules**")
+			.setAuthor("CraftYourWorld", "https://imgur.com/i8UVoJq.png")
+			.setDescription(
+				"Get Your Self To Know the Rules Of This Server Before You Can Do Anything!\nAnd Make Sure To get Yourself Some Roles To Know More About People And This Server"
+			)
+			.setThumbnail("https://imgur.com/i8UVoJq.png")
+			.addFields(
 				{
-					name: "\n\n\n**Section 2 - Credits**",
-					value: "\n────────────",
+					name: "**Rule 8**",
+					value: "\n**Advertising :** Advertising On This Server is Strictly Not Allowed, Do Not Advertise Your Youtube Channel And Other Social Media Lead You To A Warn At First And Then Ban, So To Avoid It.",
 					inline: false,
 				},
+			)
+			.setTimestamp()
+			.setFooter(`@CraftYourWorld`)
+		message.channel.send({ embed })
+	}
+})
+
+client.on("message", (message) => {
+	if (message.content === `links`) {
+		message.delete()
+		const embed = new Discord.MessageEmbed()
+			.setColor("#0099ff")
+			.setTitle("**CraftYourWorld Links**")
+			.setAuthor("CraftYourWorld", "https://imgur.com/i8UVoJq.png")
+			.setDescription(
+				"Get Your Self To Know the Rules Of This Server Before You Can Do Anything!\nAnd Make Sure To get Yourself Some Roles To Know More About People And This Server"
+			)
+			.setThumbnail("https://imgur.com/i8UVoJq.png")
+			.addFields(
 				{
-					name: "\n\n**2.1**",
-					value:
-						"\n**You must include the below text on all main publishing platforms that you may use. (Minecraft Forum, Planet Minecraft, Minecraft Maps, Curseforge, etc.).**",
+					name: "**Rule 2**",
+					value: "\n**Language :** Please stick to English so we can understand you.",
 					inline: false,
 				},
-				{
-					name: "\n**2.2**",
-					value:
-						"\n**You must create a `credits.txt` within your project that includes the below text.**",
-					inline: false,
-				},
-				{
-					name: "\n\n**Credit.txt Format**",
-					value: "```Credits:\n[website Yet To Come]```",
-					inline: false,
-				}
 			)
 			.setTimestamp()
 			.setFooter(`@CraftYourWorld`)

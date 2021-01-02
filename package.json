@@ -1,0 +1,21 @@
+{
+  "name": "craftyourworld-bot-info",
+  "version": "1.0.0",
+  "description": "Your Info.",
+  "main": "bot.js",
+  "repository": "https://github.com/Nigelrex/CraftYourWorld-Info-Bot",
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "keywords": [],
+  "author": "Nigelrex",
+  "license": "MIT",
+  "bugs": {},
+  "homepage": "",
+  "dependencies": {
+    "discord.js": "github:discordjs/discord.js#pull/4874/head",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security"
+  }
+}
